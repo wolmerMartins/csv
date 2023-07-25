@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  unit-test:
+    image: dev_csv_backend
+    volumes:
+      - /app/node_modules
+      - ./:/app
+      - ./conf/.env.test:/app/.env
+    command: npm test
