@@ -1,7 +1,6 @@
 import { UserDTO } from '../../files/types'
 import UserMapper from '../domain/mappers/user-mapper'
 import User from '../domain/user'
-import FilterVO from '../domain/valueObjects/filter-vo'
 import { IUserRepository } from '../repositories/iuser-repository'
 import EmptyUsersListError from './errors/empty-users-list-error'
 import InvalidAttributesError from './errors/invalid-attributes-error'
@@ -33,7 +32,7 @@ export default class UserService implements IUserService {
     await this.userRepository.createMany(users)
   }
 
-  public async get(filter?: FilterVO): Promise<User[]> {
+  public async get(filter?: string): Promise<User[]> {
     const users = await this.userRepository.get(filter)
 
     return users

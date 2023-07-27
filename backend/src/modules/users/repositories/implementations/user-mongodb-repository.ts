@@ -1,5 +1,4 @@
 import User from '../../domain/user'
-import FilterVO from '../../domain/valueObjects/filter-vo'
 import UserMongoDBModel from '../../models/user-mongodb-model'
 import { IUserRepository } from '../iuser-repository'
 
@@ -8,8 +7,22 @@ export default class UserMongoDBRepository implements IUserRepository {
     await UserMongoDBModel.insertMany(users)
   }
 
-  public async get(filter?: FilterVO): Promise<User[]> {
-    const dbUsers = await UserMongoDBModel.find(filter?.toUserFilter() ?? {})
+  private getQuery(filter?: string): Record<string, any> {
+    if (!filter) return {}
+
+    const query = new RegExp(filter, 'gi')
+    return {
+      $or: [
+        { name: query },
+        { city: query },
+        { country: query },
+        { favoriteSport: query }
+      ]
+    }
+  }
+
+  public async get(filter?: string): Promise<User[]> {
+    const dbUsers = await UserMongoDBModel.find(this.getQuery(filter))
 
     return dbUsers.map(
       dbUser => new User(dbUser.name, dbUser.city, dbUser.country, dbUser.favoriteSport)
