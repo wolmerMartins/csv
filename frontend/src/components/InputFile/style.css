@@ -1,0 +1,37 @@
+.input-file-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-file-label {
+  display: inline-block;
+  width: 300px;
+  padding: 8px;
+  margin: 0;
+  color: whitesmoke;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  background-color: darkcyan;
+  box-sizing: border-box;
+}
+
+.input-file {
+  display: none;
+}
+
+.selected-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+}
+
+.filename {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+}

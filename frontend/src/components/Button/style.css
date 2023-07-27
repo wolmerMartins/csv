@@ -1,0 +1,21 @@
+.button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  color: whitesmoke;
+  border: none;
+}
+
+.button:disabled {
+  background-color: lightgrey;
+  color: gray;
+}
+
+.button-success-theme {
+  background-color: darkgreen;
+}
+
+.button-danger-theme {
+  background-color: darkred;
+}

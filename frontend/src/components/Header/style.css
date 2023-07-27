@@ -1,0 +1,22 @@
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: cadetblue;
+  padding: 20px;
+  color: white;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.header-logo {
+  width: auto;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 22px;
+  margin: 0;
+}
