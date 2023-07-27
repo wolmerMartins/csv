@@ -1,4 +1,5 @@
 import 'express-async-errors'
+import cors from 'cors'
 
 import errorHandler from './common/middlewares/error-handler'
 import EnvConfig from './common/config'
@@ -11,6 +12,7 @@ const port = EnvConfig.getValueAsNumber(PORT)
 
 makeConnection()
 
+app.use(cors())
 app.use(router)
 app.use(errorHandler)
 
