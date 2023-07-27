@@ -14,6 +14,8 @@ export default class FilesController {
 
     await this.usersService.createMany(uploadedData)
 
-    res.status(200).json(uploadedData)
+    const users = await this.usersService.get()
+
+    res.status(200).json(users)
   }
 }

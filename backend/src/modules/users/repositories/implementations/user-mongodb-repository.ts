@@ -9,6 +9,10 @@ export default class UserMongoDBRepository implements IUserRepository {
   }
 
   public async get(filter?: FilterVO): Promise<User[]> {
-    return UserMongoDBModel.find(filter?.toUserFilter() ?? {})
+    const dbUsers = await UserMongoDBModel.find(filter?.toUserFilter() ?? {})
+
+    return dbUsers.map(
+      dbUser => new User(dbUser.name, dbUser.city, dbUser.country, dbUser.favoriteSport)
+    )
   }
 }
