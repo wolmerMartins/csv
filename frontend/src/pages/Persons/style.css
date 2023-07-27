@@ -1,0 +1,23 @@
+.persons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.persons-search-container {
+  display: flex;
+  justify-content: center;
+}
+
+.persons-search {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+}
+
+.persons-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+}

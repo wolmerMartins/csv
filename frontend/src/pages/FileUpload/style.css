@@ -1,0 +1,19 @@
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.file-upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+
+.file-upload-error {
+  font-size: 12px;
+  color: red;
+}
